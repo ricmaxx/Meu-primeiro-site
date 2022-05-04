@@ -7,28 +7,20 @@
     <title>Teste JavaScript</title>
     <script>
         var quebrada = false;    
-        function mudaLampada (type) {
-            if (type == 1){
-                arquivo = "_imagens/lampada-acesa.jpg";
-            }
-            if (type == 2){
-                arquivo = "_imagens/lampada-apagada.jpg";
-            }
-            if (type == 3) {
-                arquivo = "_imagens/lampada-quebrada.jpg";
-            }
+        function mudaLampada (tipo) {
+            
             if (!quebrada) {
-            document.getElementById("luz").src = arquivo;
-            if (type == 3) {
+            document.getElementById("luz").src = "_imagens/" + tipo + ".jpg";
+            if (tipo == 'lampada-quebrada') {
              quebrada = true;
             }
-            }
         }
+    }
 
     </script>
 </head>
 <body>
  <h1>Acenda a lâmpada</h1>
- <img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)">
+ <img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')">
 </body>
 </html>
